@@ -19,8 +19,8 @@ public class App {
 
       stmt = conn.createStatement();
 	   
-stmt.executeQuery("CREATE TABLE Tabela (id int, Dane1 varchar(255), Dane2 varchar(255));"); // Stworzenie tabeli
-stmt.executeQuery("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (1, 'jakiesdane1', 'jakiesdane2');"); //dodanie jakichś danych	   
+stmt.executeUpdate("CREATE TABLE Tabela (id int, Dane1 varchar(255), Dane2 varchar(255));"); // Stworzenie tabeli
+stmt.executeUpdate("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (1, 'jakiesdane1', 'jakiesdane2');"); //dodanie jakichś danych	   
 	   	        
 ResultSet result = stmt.executeQuery("SELECT * FROM Tabela"); //select danych
 
