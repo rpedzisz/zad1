@@ -21,7 +21,8 @@ public class App {
 	   
 stmt.executeUpdate("CREATE TABLE Tabela (id int, Dane1 varchar(255), Dane2 varchar(255));"); // Stworzenie tabeli
 stmt.executeUpdate("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (3, 'jakiesdane1', 'jakiesdane2');"); //dodanie jakichś danych	   
-stmt.executeUpdate("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (7, 'jakiesdane132', 'jakiesdane243');"); //dodanie jakichś danych  	        
+stmt.executeUpdate("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (7, 'jakiesdane132', 'jakiesdane243');"); //dodanie jakichś danych
+stmt.executeUpdate("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (14, 'jakiesdane13432', 'jakiesdane243443');"); //dodanie jakichś danych
 ResultSet result = stmt.executeQuery("SELECT * FROM Tabela"); //select danych
 
       while(result.next()){
