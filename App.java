@@ -4,7 +4,7 @@ public class App {
    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";  
    static final String DB_URL = "jdbc:mysql://10.0.10.3:3306/baza";
 
-   static final String USER = "root";
+   static final String USER = "root"; 
    static final String PASS = "root";
    
    public static void main(String[] args) {
@@ -20,8 +20,8 @@ public class App {
       stmt = conn.createStatement();
 	   
 stmt.executeUpdate("CREATE TABLE Tabela (id int, Dane1 varchar(255), Dane2 varchar(255));"); // Stworzenie tabeli
-stmt.executeUpdate("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (1, 'jakiesdane1', 'jakiesdane2');"); //dodanie jakichś danych	   
-	   	        
+stmt.executeUpdate("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (3, 'jakiesdane1', 'jakiesdane2');"); //dodanie jakichś danych	   
+stmt.executeUpdate("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (7, 'jakiesdane132', 'jakiesdane243');"); //dodanie jakichś danych  	        
 ResultSet result = stmt.executeQuery("SELECT * FROM Tabela"); //select danych
 
       while(result.next()){
@@ -31,7 +31,7 @@ ResultSet result = stmt.executeQuery("SELECT * FROM Tabela"); //select danych
 		 
          System.out.print("ID: " + id); // wyświetlenie danych
          System.out.print(", Dane1: " + dane1);
-         System.out.print(", Dane1: " + dane2);
+         System.out.print(", Dane1: " + dane2 +"\n");
 		 
       }
       result.close();
