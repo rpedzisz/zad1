@@ -4,8 +4,8 @@ public class App {
    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";  
    static final String DB_URL = "jdbc:mysql://10.0.10.3:3306/baza";
 
-   static final String USER = "root"; 
-   static final String PASS = "root";
+   static final String USER = "rpedzisz"; 
+   static final String PASS = "abc";
    
    public static void main(String[] args) {
    Connection conn = null;
