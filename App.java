@@ -10,6 +10,7 @@ public class App {
    public static void main(String[] args) {
    Connection conn = null;
    Statement stmt = null;
+	  System.out.println("Przed blokiem try"); 
    try{
       Class.forName("com.mysql.jdbc.Driver");
 
@@ -22,9 +23,9 @@ public class App {
       ResultSet result = stmt.executeQuery(sql);
 
       while(result.next()){
-         int id  = rs.getInt("id");
-         String dane1 = rs.getString("Dane1");
-         String dane2 = rs.getString("Dane2");
+         int id  = result.getInt("id");
+         String dane1 = result.getString("Dane1");
+         String dane2 = result.getString("Dane2");
 		 
          System.out.println("ID: " + id);
          System.out.println(", Dane1: " + dane1);
@@ -52,5 +53,6 @@ public class App {
       }
    }
  }
+	System.out.println("Za blokiem try"); 
 }
 
