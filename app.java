@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class DockerConnect {
+public class App {
    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
    static final String DB_URL = "jdbc:mysql://10.0.10.3:3306/rpedzisz";
 
