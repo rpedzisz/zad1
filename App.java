@@ -29,9 +29,9 @@ ResultSet result = stmt.executeQuery("SELECT * FROM Tabela"); //select danych
          String dane1 = result.getString("Dane1");
          String dane2 = result.getString("Dane2");
 		 
-         System.out.println("ID: " + id); // wyświetlenie danych
-         System.out.println(", Dane1: " + dane1);
-         System.out.println(", Dane1: " + dane2);
+         System.out.print("ID: " + id); // wyświetlenie danych
+         System.out.print(", Dane1: " + dane1);
+         System.out.print(", Dane1: " + dane2);
 		 
       }
       result.close();
