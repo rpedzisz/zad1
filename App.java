@@ -1,8 +1,8 @@
 import java.sql.*;
 
 public class App {
-   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-   static final String DB_URL = "jdbc:mysql://pwcho2018_83808:3306/rpedzisz";
+   static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";  
+   static final String DB_URL = "jdbc:mysql://pwcho2018_83808:3306/baza";
 
    static final String USER = "rpedzisz";
    static final String PASS = "abc";
@@ -12,7 +12,7 @@ public class App {
    Statement stmt = null;
 	  System.out.println("Przed blokiem try"); 
    try{
-      Class.forName("com.mysql.jdbc.Driver");
+      Class.forName(JDBC_DRIVER);
 
       System.out.println("Łączenie...");
       conn = DriverManager.getConnection(DB_URL,USER,PASS);
