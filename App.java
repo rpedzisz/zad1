@@ -14,20 +14,22 @@ public class App {
    try{
       Class.forName("com.mysql.jdbc.Driver");
 
-      System.out.println("Connecting to database...");
+      System.out.println("Łączenie...");
       conn = DriverManager.getConnection(DB_URL,USER,PASS);
 
       stmt = conn.createStatement();
-      String sql;
-      sql = "SELECT * FROM Tabela";
-      ResultSet result = stmt.executeQuery(sql);
+	   
+stmt.executeQuery("CREATE TABLE Tabela (id int, Dane1 varchar(255), Dane2 varchar(255));"); // Stworzenie tabeli
+stmt.executeQuery("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (1, 'jakiesdane1', 'jakiesdane2');"); //dodanie jakichś danych	   
+	   	        
+ResultSet result = stmt.executeQuery("SELECT * FROM Tabela"); //select danych
 
       while(result.next()){
          int id  = result.getInt("id");
          String dane1 = result.getString("Dane1");
          String dane2 = result.getString("Dane2");
 		 
-         System.out.println("ID: " + id);
+         System.out.println("ID: " + id); // wyświetlenie danych
          System.out.println(", Dane1: " + dane1);
          System.out.println(", Dane1: " + dane2);
 		 
