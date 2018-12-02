@@ -18,23 +18,20 @@ public class App {
 
       stmt = conn.createStatement();
       String sql;
-      sql = "SELECT PersonID, FirstName, LastName, Address, City FROM Persons";
-      ResultSet rs = stmt.executeQuery(sql);
+      sql = "SELECT * FROM Tabela";
+      ResultSet result = stmt.executeQuery(sql);
 
-      while(rs.next()){
-         int id  = rs.getInt("PersonID");
-         String first = rs.getString("FirstName");
-         String last = rs.getString("LastName");
-		 String address = rs.getString("Address");
-		 String city = rs.getString("City");
-
+      while(result.next()){
+         int id  = rs.getInt("id");
+         String dane1 = rs.getString("Dane1");
+         String dane2 = rs.getString("Dane2");
+		 
          System.out.println("ID: " + id);
-         System.out.println(", First: " + first);
-         System.out.println(", Last: " + last);
-		 System.out.println(", Address: " + address);
-		 System.out.println(", City: " + city);
+         System.out.println(", Dane1: " + dane1);
+         System.out.println(", Dane1: " + dane2);
+		 
       }
-      rs.close();
+      result.close();
       stmt.close();
       conn.close();
    }catch(SQLException se){
