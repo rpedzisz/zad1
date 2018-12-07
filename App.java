@@ -24,18 +24,16 @@ public class App {
 			
 			conn.close();
 		}
-		catch(SQLException se){
-			
-      			
-			
+		catch(SQLException se){	
    		}
 		catch(Exception e){
-			
-      		
    		}
 		   
-		  
-		  
+		  try{
+                  Thread.sleep(1000);
+		}catch(InterruptedException ex){}
+		   
+		  System.out.print(".")
   			
 		  
 	   }
