@@ -12,7 +12,7 @@ public class App {
 	   boolean czybazaonline = false;
    Connection conn = null;
    Statement stmt = null;
-	  System.out.println("Sprawdzanie połączenia z bazą"); 
+	  System.out.println("Czekanie na połączenie z bazą"); 
 	   
 	   while (czybazaonline == false) // sprawdzanie czy baza jest online
 	   {
@@ -26,21 +26,18 @@ public class App {
 		}
 		catch(SQLException se){
 			
-      			System.out.println("Baza Offline");
+      			
 			
    		}
 		catch(Exception e){
-			System.out.println("Baza Offline");
+			
       		
    		}
 		   
 		  
-		   
-		   	try{
-			Thread.sleep(2000);
-			}catch(InterruptedException ex){}
+		  
   			
-		   // sprawdzanie połączenia z bazą co 2s 
+		  
 	   }
 	   
 	   
