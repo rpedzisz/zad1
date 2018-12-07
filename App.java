@@ -33,7 +33,7 @@ public class App {
                   Thread.sleep(1000);
 		}catch(InterruptedException ex){}
 		   
-		  System.out.print(".")
+		  System.out.print(".");
   			
 		  
 	   }
