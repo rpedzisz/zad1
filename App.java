@@ -74,7 +74,9 @@ ResultSet result = stmt.executeQuery("SELECT * FROM Tabela"); //select danych
       se.printStackTrace();
    }catch(Exception e){
       e.printStackTrace();
-   }finally{
+   }finally
+	   
+   {
       try{
          if(stmt!=null)
             stmt.close();
@@ -90,6 +92,7 @@ ResultSet result = stmt.executeQuery("SELECT * FROM Tabela"); //select danych
 	   
 	   
    }
+	}
  }
 	
 }
