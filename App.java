@@ -1,5 +1,5 @@
 import java.sql.*;
-import java.util.concurrent.TimeUnit;
+
 
 public class App {
    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";  
@@ -34,7 +34,13 @@ public class App {
       		
    		}
 		   
-		  TimeUnit.SECONDS.sleep(2); // sprawdzanie połączenia z bazą co 2s 
+		  
+		   
+		   	try{
+			Thread.sleep(2000);
+			}catch(InterruptedException ex){}
+  			
+		   // sprawdzanie połączenia z bazą co 2s 
 	   }
 	   
 	   
