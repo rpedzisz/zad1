@@ -8,21 +8,53 @@ public class App {
    static final String PASS = "abc";
    
    public static void main(String[] args) {
+	   boolean czybazaonline = false;
    Connection conn = null;
    Statement stmt = null;
-	  System.out.println("Przed blokiem try"); 
+	  System.out.println("Sprawdzanie połączenia z bazą"); 
+	   
+	   while (czybazaonline == false)
+	   {
+		try{
+      		Class.forName(JDBC_DRIVER);
+		conn = DriverManager.getConnection(DB_URL,USER,PASS);
+			System.out.println("Baza Online");
+			czybazaonline = true;
+			
+			conn.close();
+		}
+		catch(SQLException se){
+			
+      			System.out.println("Baza Offline");
+			
+   		}
+		catch(Exception e){
+			System.out.println("Baza Offline");
+      		
+   		}
+		   
+	   }
+	   
+	   
+	   
+	   
+	 	   
+	if (czybazaonline == true)   
+	{
    try{
       Class.forName(JDBC_DRIVER);
 
-      System.out.println("Łączenie...");
+      
       conn = DriverManager.getConnection(DB_URL,USER,PASS);
 
       stmt = conn.createStatement();
-	   
+	   System.out.println("Create Table...");
 stmt.executeUpdate("CREATE TABLE Tabela (id int, Dane1 varchar(255), Dane2 varchar(255));"); // Stworzenie tabeli
+	   System.out.println("Insert...");
 stmt.executeUpdate("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (3, 'jakiesdane1', 'jakiesdane2');"); //dodanie jakichś danych	   
 stmt.executeUpdate("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (7, 'jakiesdane132', 'jakiesdane243');"); //dodanie jakichś danych
 stmt.executeUpdate("INSERT INTO Tabela  (id, Dane1, Dane2) VALUES (14, 'jakiesdane13432', 'jakiesdane243443');"); //dodanie jakichś danych
+			    System.out.println("Select...");  
 ResultSet result = stmt.executeQuery("SELECT * FROM Tabela"); //select danych
 
       while(result.next()){
@@ -54,6 +86,9 @@ ResultSet result = stmt.executeQuery("SELECT * FROM Tabela"); //select danych
       }catch(SQLException se){
          se.printStackTrace();
       }
+	   
+	   
+	   
    }
  }
 	
