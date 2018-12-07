@@ -13,7 +13,7 @@ public class App {
    Statement stmt = null;
 	  System.out.println("Sprawdzanie połączenia z bazą"); 
 	   
-	   while (czybazaonline == false)
+	   while (czybazaonline == false) // sprawdzanie czy baza jest online
 	   {
 		try{
       		Class.forName(JDBC_DRIVER);
@@ -33,13 +33,14 @@ public class App {
       		
    		}
 		   
+		  TimeUnit.SECONDS.sleep(2); // sprawdzanie połączenia z bazą co 2s 
 	   }
 	   
 	   
 	   
 	   
 	 	   
-	if (czybazaonline == true)   
+	if (czybazaonline == true)   // jeśli baza jest online to wykonywanie zapytań
 	{
    try{
       Class.forName(JDBC_DRIVER);
